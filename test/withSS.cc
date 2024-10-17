@@ -4,7 +4,7 @@
 
 #include "../src/SuperString.cc"
 
-int main() {
+int main(void) {
     char *content;
     // file reading
     FILE *f = fopen("/Users/btwael/Downloads/longtextfile.txt", "r+");
