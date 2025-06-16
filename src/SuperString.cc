@@ -270,12 +270,12 @@ SuperString::Result<std::size_t, SuperString::Error> SuperString::StringSequence
 }
 
 void SuperString::StringSequence::refAdd() const {
-    StringSequence *self = (StringSequence *) (unsigned long) this;
+    StringSequence *self = (StringSequence *) this;
     self->_refCount++;
 }
 
 std::size_t SuperString::StringSequence::refRelease() const {
-    StringSequence *self = (StringSequence *) (unsigned long) this;
+    StringSequence *self = (StringSequence *) this;
     if(self->_refCount == 0) {
         return 0;
     }
@@ -287,12 +287,12 @@ std::size_t SuperString::StringSequence::refCount() const {
 }
 
 void SuperString::StringSequence::addReferencer(SuperString::ReferenceStringSequence *sequence) const {
-    StringSequence *self = (StringSequence *) (unsigned long) this;
+    StringSequence *self = (StringSequence *) this;
     self->_referencers.push(sequence);
 }
 
 void SuperString::StringSequence::removeReferencer(SuperString::ReferenceStringSequence *sequence) const {
-    StringSequence *self = (StringSequence *) (unsigned long) this;
+    StringSequence *self = (StringSequence *) this;
     self->_referencers.remove(sequence);
 }
 
